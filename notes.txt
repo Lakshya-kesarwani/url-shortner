@@ -149,3 +149,7 @@ MVC:
                     return res.status(200).json({msg:"---"})
                 }.....
                 3)module.exports = {func1,func2,func3,func4,func5,func6}
+
+    ----------------------------------------------------------------
+
+    

@@ -89,6 +89,63 @@ SCHEMA -DEFINE THE STRUCTURE
         gender: body.gender
     })
 
+    await User.find({});
     User.findById
-
     User.findByIdAndUpdate(req.params.id, {last_name:"Changed"})
+    User.findByIdAndDelete(req.params.id)
+
+
+    ----------------------------------------------------------------
+MVC:
+    models
+    views
+    controllers
+    ------- --------------------------------------------------------
+
+
+    index.js -> main file
+
+                1)require express
+                2)require connection 
+                    and call it
+                3)require router;
+                    app.use("path",router)
+                4)require middleware
+                    app.use(middlware(args))
+                additionals (eg middlewares)
+                5)app.listen(port,callback)
+
+    models/user.js
+                1)require moongoose
+                2)define const userSchema =new mongoose.Schema( {
+                    col1:{
+                        properties(type,required,unique)
+                    },
+                })
+                3)const User = mongoose.model("tablename",userSchema);
+                4)module.exports = User
+
+    connection.js->
+                1)require mongoose
+                2)function that return mongoose.connect(url)
+                3)module.exports = {function}
+
+    ./middleware/index.js
+                1)requires fs
+                2)function that returns (rea,res,next)=>{----}
+                3)module.exports = {function}
+
+    ./routes/user.js
+                1)require express
+                2) const router = express.Router()
+                3)require {all controllers}
+                4)router.route("path").method(controller[i])
+                5)module.exports = router
+
+    ./controller/user.js
+                1)require userSchema
+                2) async function handleEvent(req,res){
+                    ---------------------------
+                    return res.status(200).json({msg:"---"})
+                }.....
+                3)module.exports = {func1,func2,func3,func4,func5,func6}

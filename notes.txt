@@ -1,0 +1,70 @@
+#EXPRESS FRAMEWORK
+app.METHOD(PATH,HANDLER)
+
+app-> is instanceof express
+METHOD-> http req METHOD
+PATH-> is path on http server
+HANDLER-> is the function executed when the route is matched
+
+----------------------------------------------------------------
+#REST API
+(RESTFUL API)
+Rules for best practices:-
+
+two components-> server(sends response) + client(send request) [browser,mobile,alexa]
+
+1.server client architecture  -->JSON (kind of raw data)->client can render in its own way ->res.JSON FOR CSR
+                            frontend can decide how to work with data:
+                            but if we are sure  client is browser, we can go with server side rendering
+2. Always respect all HTTP METHODs
+    GET ->user data reading and return
+    POST -> handle new user creation
+    PUT ->
+    PATCH ->update user 
+    DELETE ->delete user
+----------------------------------------------------------------
+
+GET /users - list all users   
+GET /users/1 - get user with id 1
+GET /users/2 - get user with id 2
+
+POST /users - create new user
+
+PATCH /users/1 - update user with id 1
+
+DELETE /users/2 - delete user with id 2
+
+----------------------------------------------------------------
+Middlewares
+
+client->sends req -> lets get req on "/users"
+        expreess check for route-> sends response
+
+but with middleware-> req first goes to middleware
+             (can do some kind of processing)-> 
+             either forwards the request; 
+             or returns the response 
+
+can change 
+ ----------------------------------------------------------------
+
+ headers
+ HTTP headers are an important part of the api request and response as they represent the
+ metadata associated with the api request and response
+
+ header carry information for the request and response body
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+status code
+
+200 - ok successfull
+
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+
+400-> bad request ->malfunctioned request (syntax)

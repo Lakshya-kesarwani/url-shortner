@@ -75,3 +75,20 @@ Server error responses (500 – 599)
 
 500 - internal server error
 503 - service unavailable
+
+----------------------------------------------------------------
+
+SCHEMA -DEFINE THE STRUCTURE
+    SCHEMA -MODEL
+
+    User.create({
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,
+        job_title: body.job_title,
+        gender: body.gender
+    })
+
+    User.findById
+
+    User.findByIdAndUpdate(req.params.id, {last_name:"Changed"})

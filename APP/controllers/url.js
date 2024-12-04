@@ -1,20 +1,20 @@
 const URL = require('../models/url');
+const shortid = require("shortid");
+
 
 async function handleGenerateNewShortUrl(req,res) {
 
     const body = req.body;
-    console.log(JSON.stringify(body))
-    const { nanoid } = await import('nanoid/non-secure');
-
-
     if(!body){
         return res.status(400).json({ message: 'No data provided' });
     }
-    const shortID = nanoid(8);
+    const shortID = shortid();
     await URL.create({
         shortId:shortID,
         redirectURL: body.redirectURL,
-        visitHistory: []
+        visitHistory: [],   
+        createdBy: req.user._id,
+
     })
 
     // return res.json({id: shortID})    

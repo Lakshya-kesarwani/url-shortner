@@ -12,10 +12,13 @@ const urlSchema = new mongoose.Schema({
     },
     visitHistory:[{
         timestamp:{
-            type:String,
-            required:true
+            type:Number,
         }
-    }]
+    }], 
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users",
+      },
 },
     {timestamps: true}
 );

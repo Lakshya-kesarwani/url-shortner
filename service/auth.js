@@ -1,7 +1,10 @@
 const sessionIdToUserMap = new Map();
 
 const jwt = require('jsonwebtoken');
-const secretKey = "lakshya_ansh_kesari321";
+require('dotenv').config();
+const secretKey = process.env.JWT_SECRET
+
+
 function setUser (user){
   
     return jwt.sign({

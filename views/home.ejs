@@ -105,13 +105,60 @@
     tbody tr:hover {
       background-color: #ddd;
     }
-    
+    .logout-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+      padding-right: 20px;
+    }
+
+    .logout-container button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-container button:hover {
+      background-color: #2980b9;
+    }
+
+    .logout-container button a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Make Logout Button Fixed to Top-Right */
+    .logout-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .logout-container button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
   </style>
   
 </head>
 
 
 <body>
+  <div class="logout-container">
+    <button>
+      <a href="/logout">Logout</a>
+    </button>
+  </div>
+
   <h1>URL SHORTENER</h1>
   <% if (locals.shortID) { %>
     <div>
@@ -157,6 +204,7 @@
           </table>
           <% } %>
       </div>
+
 </body>
 
 </html>

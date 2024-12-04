@@ -26,4 +26,15 @@ router.get('/signup',(req,res)=>{
 router.get('/login',(req,res)=>{
     return res.render("login")
 })
+
+
+router.get('/logout', (req, res) => {
+    res.clearCookie('token', {
+      httpOnly: true, 
+      secure: true,  
+      sameSite: 'strict', 
+    });
+  
+    res.redirect('/login');
+  });
 module.exports = router

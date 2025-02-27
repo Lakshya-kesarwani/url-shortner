@@ -162,7 +162,7 @@
   <h1>URL SHORTENER</h1>
   <% if (locals.shortID) { %>
     <div>
-      Generated url is <a href="http://localhost:8001/url/<%= locals.shortID %>">http://localhost:8001/url/<%=
+      Generated url is <a href="https://my-url-shortner-app.onrender.com/url/<%= locals.shortID %>">https://my-url-shortner-app.onrender.com/url/<%=
           locals.shortID %></a>
 
     </div>
@@ -170,7 +170,7 @@
       <div>
         <form action="/url" method="POST">
           <label for="">Enter your Original URL</label>
-          <input type="text" name="redirectURL" placeholder="https://exaample.com">
+          <input type="text" name="redirectURL" placeholder="https://example.com">
           <button type="submit">Shorten URL</button>
         </form>
       </div>
